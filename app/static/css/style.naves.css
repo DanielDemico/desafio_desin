@@ -59,7 +59,7 @@ aside.registro {
     margin-right: 10px;
 }
 
-form label {
+.opcoes label {
     font-size: large;
     color: rgba(1, 236, 246, 0.9);
     -webkit-text-stroke-color: rgba(218, 29, 129);
