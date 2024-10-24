@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
     path('naves/',views.naves,name='naves'),
-    path('patos/',views.patos,name='patos')
+    path('patos/',views.patos,name='patos'),
+    path('criarNave',views.criarNave,name='criarNave')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

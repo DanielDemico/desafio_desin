@@ -19,80 +19,141 @@
 
                 <div id="corpo">
                     <section class="catalogar">
+                        <form action="{% url 'criarNave' %}" method="post">
+                            {% csrf_token %}
                         <div class="itens-catalogo">
                             <h2>Registrar Nova Nave</h2>
+                            
                             <div class="opcoes">
                                 <label for="tamanho">Tamanho:</label>
                                 <select name="tamanho">
-
+                                    <option value="pequena">Pequena</option>
+                                    <option value="media">Média</option>
+                                    <option value="grande">Grande</option>
+                                    <option value="gigantesca">Gigantesca</option>
                                 </select>
                             </div>
                             
                             <div class="opcoes">
                                 <label for="cor">Cor:</label>
                                 <select name="cor">
-
+                                    <option value="branco">Branco</option>
+                                    <option value="preto">Preto</option>
+                                    <option value="azul">Azul</option>
+                                    <option value="verde">Verde</option>
+                                    <option value="vermelho">Vermelho</option>
+                                    <option value="amarelo">Amarelo</option>
+                                    <option value="laranja">Laranja</option>
+                                    <option value="roxo">Roxo</option>
+                                    <option value="rosa">Rosa</option>
+                                    <option value="marrom">Marrom</option>
+                                    <option value="cinza">Cinza</option>
+                                    <option value="prata">Prata</option>
+                                    <option value="dourado">Dourado</option>
                                 </select>
                             </div>
 
                             <div class="opcoes">
                                 <label for="local">Local de Queda:</label>
                                 <select name="local_queda">
-                                    <option value=""></option>
+                                    <option value="parque">Parque</option>
+                                    <option value="floresta">Floresta</option>
+                                    <option value="lago">Lago</option>
+                                    <option value="mar">Mar</option>
+                                    <option value="parque">Parque</option>
+                                    <option value="escola">Escola</option>
+                                    <option value="hospital">Hospital</option>
+                                    <option value="aeroporto">Aeroporto</option>
+                                    <option value="base_militar">Base Militar</option>
                                 </select>
                             </div>
 
                             <div class="opcoes">
                                 <label for="armamento">Armamentos:</label>
                                 <select name="armamento">
-                                    
+                                    <option value="nenhum">Nenhum</option>
+                                    <option value="leve">Leve</option>
+                                    <option value="medio">Médio</option>
+                                    <option value="Pesado">Pesado</option>
+                                    <option value="nuclear">Nuclear</option>
                                 </select>
                             </div>
 
                             <div class="opcoes">
                                 <label for="combustivel">Tipo de Combustível:</label>
                                 <select name="combustivel">
-                                    
+                                    <option value="biocombustivel">Biocombustível</option>
+                                    <option value="Antimatéria">Antimatéria</option>
+                                    <option value="plasma">Plasma</option>
+                                    <option value="energia_solar">Energia Solar</option>
+                                    <option value="hidrogenio">Hidrogênio</option>
+                                    <option value="eletrico">Elétrico</option>
+                                    <option value="oleo">Óleo</option>
+                                    <option value="gas">Gás</option>
                                 </select>
                             </div>
 
                             <div class="opcoes">
                                 <label for="tripulantes">Estado Geral da Tripulação:</label>
-                                <select name="tripulantes">
-                                    
-                                </select>
+                                <input type="text" name="tripulantes">
                             </div>
 
                             <div class="opcoes">
                                 <label for="avaria">Grau de Avaria:</label>
                                 <select name="avaria">
-                                    
+                                    <option value="perda_total">Perda Total</option>
+                                    <option value="muito_destruida">Muito Destruída</option>
+                                    <option value="parcialmente_destruida">Parcialmente Destruida</option>
+                                    <option value="praticamente_intacta">Praticamente Intacta</option>
+                                    <option value="intacta">Intacta</option>
                                 </select>
                             </div>
 
                             <div class="opcoes">
-                                <label for="potencial_prospecção_tecnologico">Potencial Tecnológico:</label>
-                                <select name="potencial_prospecção_tecnologico">
-                                    
-                                </select>
+                                <label for="potencial_prospecção_tecnologico">Potencial Tecnológico (de 0 a 10):</label>
+                                <input name="potencial_prospecção_tecnologico" type="number">
                             </div>
 
                             <div class="opcoes">
                                 <label for="periculosidade">Grau de Periculosidade:</label>
-                                <select name="periculosidade">
-                                    
-                                </select>
+                                <input name="periculosidade" type="number">
                             </div>
                             
                             <div class="botao-submit">
                                 <button>Submit</button>
                             </div>
                         </div>
+                    </form>
                     </section>
-        
-                    <aside class="registro">
+                    
+                    <section class="imagem-nave">
+                        <div>
+                        </div>
+                    </section>
+
+
+                    <section class="registro">
                         <h2>Naves Registradas</h2>
-                    </aside>
+                        <div>
+                            {% for i in naves %}
+                                <div>
+                                    <ul>
+                                        
+                                        <li>Tamanho: {{i.tamanho}}</li>
+                                        <li>Cor: {{i.cor}}</li>
+                                        <li>Local da queda: {{i.queda}}</li>
+                                        <li>Armamento: {{i.armamento}}</li>
+                                        <li>Combustivel: {{i.combustivel}}</li>
+                                        <li>Tripulantes: {{i.tripulantes}}</li>
+                                        <li>Avaria: {{i.avaria}}</li>
+                                        <li>Potencial de prospecção tecnológica: {{i.potencial_prospecção_tecnologico}}</li>
+                                        <li>Periculosidade: {{i.periculosidade}}</li>
+                                        <li>Etiqueta: {{i.etiquetas}}</li>
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>

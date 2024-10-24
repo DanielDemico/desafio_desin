@@ -35,7 +35,7 @@ section.catalogar {
     -webkit-text-stroke-width: 0.5px;
 }
 
-aside.registro {
+.registro {
     backdrop-filter: blur(10px);
     width: 35%;
     height: 100%;
