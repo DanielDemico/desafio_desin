@@ -22,31 +22,31 @@ def naves(request):
     lista_etiquetas = []
 
 
-    if "nenhum" in nova_nave.tripulantes.lower():
-        lista_etiquetas.append("Nave de Fugitivos")
+    # if "nenhum" in nova_nave.tripulantes.lower():
+    #     lista_etiquetas.append("Nave de Fugitivos")
 
-    if nova_nave.armamento in ["Nuclear", "Pesado"]:
-        lista_etiquetas.append("Arsenal Alienígena")
+    # if nova_nave.armamento in ["Nuclear", "Pesado"]:
+    #     lista_etiquetas.append("Arsenal Alienígena")
 
-    if nova_nave.combustivel in ["Antimatéria", "Plasma"]:
-        lista_etiquetas.append("Fonte de Energia Alternativa")
+    # if nova_nave.combustivel in ["Antimatéria", "Plasma"]:
+    #     lista_etiquetas.append("Fonte de Energia Alternativa")
 
-    if nova_nave.periculosidade >= 7:
-        if nova_nave.tamanho in ["Gigantesca", "Grande"]:
-            lista_etiquetas.append("Estrela da Morte")
-        else:
-            lista_etiquetas.append("Ameaça em Potencial")
+    # if nova_nave.periculosidade >= 7:
+    #     if nova_nave.tamanho in ["Gigantesca", "Grande"]:
+    #         lista_etiquetas.append("Estrela da Morte")
+    #     else:
+    #         lista_etiquetas.append("Ameaça em Potencial")
 
-    if nova_nave.potencial_prospecção_tecnologico >= 7:
-        if nova_nave.tamanho in ["Gigantesca", "Grande"]:
-            lista_etiquetas.append("Apice da Tecnologia")
-        else:
-            lista_etiquetas.append("Joia Tecnológica")
+    # if nova_nave.potencial_prospecção_tecnologico >= 7:
+    #     if nova_nave.tamanho in ["Gigantesca", "Grande"]:
+    #         lista_etiquetas.append("Apice da Tecnologia")
+    #     else:
+    #         lista_etiquetas.append("Joia Tecnológica")
 
-    elif nova_nave.potencial_prospecção_tecnologico < 7 or nova_nave.avaria in ["Perda total", "Muito destruída"]:
-        lista_etiquetas.append("Sucata Espacial")
-    else:
-        lista_etiquetas.append("Nave Espacial Normal")
+    # elif nova_nave.potencial_prospecção_tecnologico < 7 or nova_nave.avaria in ["Perda total", "Muito destruída"]:
+    #     lista_etiquetas.append("Sucata Espacial")
+    # else:
+    #     lista_etiquetas.append("Nave Espacial Normal")
     
     str_etiquetas = f"{', '.join(lista_etiquetas)}"
     nova_nave.etiquetas = str_etiquetas
