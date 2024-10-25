@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Nave, Pato
+from django.shortcuts import render, redirect
+from .models import Nave, Nave_Certa, Pato
 
 # Create your views here.
 
@@ -7,19 +7,11 @@ def home(request):
     return render(request,'home.html')
 
 def naves(request):
-    nova_nave = Nave()
 
-    nova_nave.tamnanho = request.POST.get('tamanho')
-    nova_nave.cor = request.POST.get('cor')
-    nova_nave.local_queda = request.POST.get('local_queda')
-    nova_nave.armamento = request.POST.get('armamento')
-    nova_nave.combustivel = request.POST.get('combustivel')
-    nova_nave.tripulantes = request.POST.get('tripulantes')
-    nova_nave.avaria = request.POST.get('avaria')
-    nova_nave.potencial_prospecção_tecnologico = request.POST.get('potencial_prospecção_tecnologico')
-    nova_nave.periculosidade = request.POST.get('periculosidade')
-
-    lista_etiquetas = []
+    naves_front = {
+        'naves': Nave_Certa.objects.all()
+    }
+    #lista_etiquetas = []
 
 
     # if "nenhum" in nova_nave.tripulantes.lower():
@@ -48,14 +40,32 @@ def naves(request):
     # else:
     #     lista_etiquetas.append("Nave Espacial Normal")
     
-    str_etiquetas = f"{', '.join(lista_etiquetas)}"
-    nova_nave.etiquetas = str_etiquetas
+    #str_etiquetas = f"{', '.join(lista_etiquetas)}"
+    #nova_nave.etiquetas = str_etiquetas
+    
+    return render(request,'naves.html',naves_front)
 
-    naves = {
-        'naves': Nave.objects.all()
+def criarNave(request):
+   
+    nova_nave = Nave_Certa()
+
+    nova_nave.tamanho = request.POST.get('tamanho')
+    nova_nave.cor = request.POST.get('cor')
+    nova_nave.local_queda = request.POST.get('local_queda')
+    nova_nave.armamento = request.POST.get('armamento')
+    nova_nave.combustivel = request.POST.get('combustivel')
+    nova_nave.tripulantes = request.POST.get('tripulantes')
+    nova_nave.avaria = request.POST.get('avaria')
+    nova_nave.potencial_prospecção_tecnologico = request.POST.get('potencial_prospecção_tecnologico')
+    nova_nave.periculosidade = request.POST.get('periculosidade')
+    nova_nave.etiquetas = "teste"
+
+    nova_nave.save()
+    
+    naves_front = {
+        'naves': Nave_Certa.objects.all()
     }
-
-    return render(request,'naves.html', naves)
+    return redirect(naves)
 
 def patos(request):
     novo_pato = Pato()

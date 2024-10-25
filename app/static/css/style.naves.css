@@ -35,6 +35,16 @@ section.catalogar {
     -webkit-text-stroke-width: 0.5px;
 }
 
+aside.registro {
+    backdrop-filter: blur(10px);
+    width: 35%;
+    height: 100%;
+    padding: 8px;
+    float: right;
+    border: 1px solid rgb(1, 236, 246);
+    border-radius: 20px;
+}
+
 .opcoes {
     display: flex;
     flex-direction: row;
