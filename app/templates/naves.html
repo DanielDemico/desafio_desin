@@ -13,7 +13,8 @@
     </head>
 
     <body class="d-flex justify-content-center">
-        <section>
+        <section class="d-flex flex-column">
+            <div class="naves-registro">
             <div id="corpo-principal">
                 <header class="header-text">
                     <h1>Catálogo de Naves</h1>
@@ -28,7 +29,7 @@
                             
                             <div class="opcoes">
                                 <label for="tamanho">Tamanho:</label>
-                                <select name="tamanho">
+                                <select name="tamanho" onchange="mudarTamanho()">
                                     <option value="pequena">Pequena</option>
                                     <option value="media">Média</option>
                                     <option value="grande">Grande</option>
@@ -38,7 +39,7 @@
                             
                             <div class="opcoes">
                                 <label for="cor">Cor:</label>
-                                <select name="cor">
+                                <select name="cor" onchange="mudarCores()">
                                     <option value="branco">Branco</option>
                                     <option value="preto">Preto</option>
                                     <option value="azul">Azul</option>
@@ -102,13 +103,14 @@
 
                             <div class="opcoes">
                                 <label for="avaria">Grau de Avaria:</label>
-                                <select name="avaria">
-                                    <option value="perda_total">Perda Total</option>
-                                    <option value="muito_destruida">Muito Destruída</option>
-                                    <option value="parcialmente_destruida">Parcialmente Destruida</option>
-                                    <option value="praticamente_intacta">Praticamente Intacta</option>
+                                <select id="avariaSelect" name="avaria" onchange="mudarAvaria()">
                                     <option value="intacta">Intacta</option>
+                                    <option value="praticamente_intacta">Praticamente Intacta</option>
+                                    <option value="parcialmente_destruida">Parcialmente Destruida</option>
+                                    <option value="muito_destruida">Muito Destruída</option>
+                                    <option value="perda_total">Perda Total</option>
                                 </select>
+                                
                             </div>
 
                             <div class="opcoes">
@@ -129,19 +131,52 @@
                     </section>
                     
                     <section class="imagem-nave">
-                        <div>
-                        </div>
-                    </section>
+                            <div class="container-img">
+                                <img id="nave" class="nave-img" src="{% static 'images/naves/naveBranca.png' %}" style="width: 400px;">
+                                
+                           
+                                
+                                <!-- Divs de grau de avaria -->
+                                 <div id="praticamente_intacta" style="display: none;">
+                                    <img class="fumaca" src="{% static 'images/rachaduras/fumaca.gif' %}">
+                                </div>
+                                 <div id="parcialmente_destruida" style="display: none;">
+                                    <img class="fumaca" src="{% static 'images/rachaduras/fumaca.gif' %}">
+                                    <img class="fogo1"src="{% static 'images/rachaduras/fogo.webp' %}">
+                                    <img class="fogo2"src="{% static 'images/rachaduras/fogo.webp' %}">
+                                 </div>
+                                 <div id="muito_destruida" style="display: none;">
+                                    <img class="fogo1"src="{% static 'images/rachaduras/fogo.webp' %}">
+                                    <img class="fogo2"src="{% static 'images/rachaduras/fogo.webp' %}">
+                                    <img class="fogo3"src="{% static 'images/rachaduras/fogo.webp' %}">
+                                    <img class="fumaca" src="{% static 'images/rachaduras/fumaca.gif' %}">
+                                    <img class="rachado" src="{% static 'images/rachaduras/rachado.png' %}">
+                                 </div>
+                                 <div id="perda_total" style="display: none;">
+                                    <img class="fogo1"src="{% static 'images/rachaduras/fogo.webp' %}">
+                                    <img class="fogo2"src="{% static 'images/rachaduras/fogo.webp' %}">
+                                    <img class="fogo3"src="{% static 'images/rachaduras/fogo.webp' %}">
+                                    <img class="fogo4"src="{% static 'images/rachaduras/fogo.webp' %}">
+                                    <img class="rachado" src="{% static 'images/rachaduras/rachado.png' %}">
+                                    <img class="fumaca" src="{% static 'images/rachaduras/fumaca.gif' %}">
+                                    <img class="fumaca2" src="{% static 'images/rachaduras/fumaca.gif' %}">
+                                 </div>
 
+                                 <!-- Armamentos -->
+                             </div>
+                        
+                    </section>
+                </div>
 
                     <section class="registro">
-                        <h2>Naves Registradas</h2>
-                        <div>
+                        <h2 style="color:white">Naves Registradas</h2>
+                        <div class="naves">
                             {% for i in naves %}
                                 <div>
-                                    <ul>                                        
+                                    <ul>
+                                        
                                         <li>Tamanho: {{i.tamanho}}</li>
-                                        <li>Cor: {{i.cor}}</li>
+                                        <li>Cor: {{i.cor}}</li>                                       
                                         <li>Local da queda: {{i.queda}}</li>
                                         <li>Armamento: {{i.armamento}}</li>
                                         <li>Combustivel: {{i.combustivel}}</li>
@@ -149,15 +184,22 @@
                                         <li>Avaria: {{i.avaria}}</li>
                                         <li>Potencial de prospecção tecnológica: {{i.potencial_prospecção_tecnologico}}</li>
                                         <li>Periculosidade: {{i.periculosidade}}</li>
-                                        <li>Etiqueta: {{i.etiquetas}}</li>
+                                        <li id="etiqueta_naves" style="display: none;">Etiqueta: {{i.etiquetas}}</li>
                                     </ul>
+
+                                    <div class="d-flex justify-content-center">
+                                        <button onclick="aparecerEtiquetas()">Inspecionar</button>
+                                    </div>
                                 </div>
+                              
                             {% endfor %}
                         </div>
                     </section>
+                  
                 </div>
             </div>
         </section>
+        <script src=" {% static 'script/script.nave.js'%}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>
