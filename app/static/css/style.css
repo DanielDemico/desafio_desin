@@ -90,7 +90,6 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    animation: 2s glitch infinite;
   }
   
   .terminal-escolha {
@@ -99,6 +98,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: 1.5s glitch1 infinite;
     background-color: rgba(218, 29, 129);
     border: 2px solid rgba(1, 236, 246, 0.9);
   }
@@ -113,70 +113,39 @@
     height: 80%;
     width: 80%;
   }
-  
-  @keyframes glitch {
+
+  @keyframes glitch1 {
     0% {
-      transform: none;
-      opacity: 1;
+      transform: translate(0, 0);
     }
-  
     7% {
-      transform: skew(-0.5deg, -0.9deg);
-      opacity: 0.75;
+      transform: translate(-2px, -2px);
     }
-  
     10% {
-      transform: none;
-      opacity: 1;
+      transform: translate(2px, -2px);
     }
-  
     27% {
-      transform: none;
-      opacity: 1;
+      transform: translate(-2px, 2px);
     }
-  
     30% {
-      transform: skew(0.8deg, -0.1deg);
-      opacity: 0.75;
+      transform: translate(2px, 2px);
     }
-  
     35% {
-      transform: none;
-      opacity: 1;
+      transform: translate(0, 0);
     }
-  
     52% {
-      transform: none;
-      opacity: 1;
+      transform: translate(-3px, 1px);
     }
-  
     55% {
-      transform: skew(-1deg, 0.2deg);
-      opacity: 0.75;
+      transform: translate(3px, -1px);
     }
-  
-    50% {
-      transform: none;
-      opacity: 1;
-    }
-  
     72% {
-      transform: none;
-      opacity: 1;
+      transform: translate(-1px, 3px);
     }
-  
-    75% {
-      transform: skew(0.4deg, 1deg);
-      opacity: 0.75;
-    }
-  
     80% {
-      transform: none;
-      opacity: 1;
+      transform: translate(1px, -3px);
     }
-  
     100% {
-      transform: none;
-      opacity: 1;
+      transform: translate(0, 0);
     }
   }
