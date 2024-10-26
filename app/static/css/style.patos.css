@@ -32,7 +32,7 @@ div#corpo {
     border-radius: 20px;
 }
 
-.opcoes {
+.tela {
     width: 40%;
     height: 40%;
     display: flex;
@@ -41,7 +41,7 @@ div#corpo {
     align-items: center;
 }
 
-div.opcoes label {
+div.tela label {
     font-size: large;
     color: rgba(1, 236, 246, 0.9);
     -webkit-text-stroke-color: rgba(218, 29, 129);
