@@ -21,7 +21,7 @@
   }
   
   body {
-    background-image: url("../images/background/galaxia.jpg");
+    background-image: url("../images/background/planetas.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -30,7 +30,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+   
   }
+  body::before {
+  
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade para escurecer */
+    z-index: -1; /* Coloca a sobreposição atrás do conteúdo */
+    min-height: 100vh;
+
+    margin: 0;
+}
   
   div#corpo-principal {
     height: 100%;
