@@ -11,7 +11,7 @@ def naves(request):
     naves_front = {
         'naves': Nave_Certa.objects.all()
     }
-   
+    #Nave_Certa.objects.all().delete() Para deletar todos os registros
     
     return render(request,'naves.html',naves_front)
 
