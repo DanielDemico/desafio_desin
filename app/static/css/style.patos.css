@@ -26,7 +26,6 @@ div#corpo {
     height: 90%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     border: 1px solid rgb(1, 236, 246);
     border-radius: 20px;
@@ -42,6 +41,7 @@ div#corpo {
     border-radius: 20px;
     padding: 15px;
     margin: auto 50px auto 50px;
+    background-color: aliceblue;
 }
 
 .opcao {
@@ -49,6 +49,7 @@ div#corpo {
     flex-direction: row;
     justify-content: center;
     margin: 8px auto 8px auto;
+    background-color: blueviolet;
 }
 
 
@@ -56,7 +57,16 @@ div.tela label {
     font-size: large;
     color: rgba(1, 236, 246, 0.9);
     -webkit-text-stroke-color: rgba(218, 29, 129);
-    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-width: 0.25px;
     margin-right: 20px;
     text-align: justify;
+}
+
+.exibir-pato {
+    width: 95%;
+    height: 95%;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    background-color: blueviolet;
 }
