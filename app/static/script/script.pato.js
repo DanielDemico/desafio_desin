@@ -63,7 +63,7 @@ function capturaPato(pele, bico, sotaque, local, quantidade, movimento) {
         xenofago = false;
     }
 
-    return captura
+    return captura;
 }
 
 function exibirPato() {
@@ -77,5 +77,10 @@ function exibirPato() {
     const captura = capturaPato(pele, bico, sotaque, local, quantidade, movimento)
 
     exibirTela();
-    document.getElementById("exibir-pato").innerHTML = captura;
+    if (xenofago === true) {
+        document.getElementById("exibir-pato").innerHTML = captura;
+    }
+    else {
+        document.getElementById("exibir-pato").innerHTML = "Este 'Pato' não é um Xenófago";
+    }
 }
