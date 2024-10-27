@@ -21,10 +21,10 @@
 
                 <div id="corpo">
                     <div class="linha-divisao">
-                        <div class="monitor">
+                        <div class="monitor" style="justify-content: space-between;">
                             <div class="tela">
                                 <div class="opcao">
-                                    <label for="pele_esverdeada">A pele do 'Pato' se encontra mais esverdeada que o comum?</label>
+                                    <label for="pele_esverdeada">A "pele" do 'Pato' se encontra mais esverdeada que o comum?</label>
                                     <select name="pele_esverdeada">
                                         <option value="0">Não</option>
                                         <option value="1">Sim</option>
@@ -47,18 +47,45 @@
                             </div> 
 
                             <div class="tela">
-                                
+                                <div class="opcao">
+                                    <label for="local">Local de Encontro dos 'Patos'</label>
+                                    <select name="local">
+                                        <option value="Lago">Lago</option>
+                                        <option value="Mar">Mar</option>
+                                        <option value="Floresta">Floresta</option>
+                                        <option value="Parque">Parque</option>
+                                        <option value="Cidade">Cidade</option>
+                                    </select>
+                                </div>
+
+                                <div class="opcao">
+                                    <label for="quantidade">Tamanho do Bando dos 'Patos'</label>
+                                    <select name="quantidade">
+                                        <option value="Sozinho">Indivíduo Único</option>
+                                        <option value="Em dupla">Dupla de Indivíduos</option>
+                                        <option value="Em bando pequeno">Pequeno Bando</option>
+                                        <option value="Bando grande">Grande Bando</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+                    <div class="botao-submit">
+                        <button onclick="exibirPato()">Submit</button>
+                    </div>
+
                     <div class="linha-divisao">
-                        <div class="monitor"></div>
+                        <div class="monitor" style="justify-content: center;">
+                            <div id="exibir-pato">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <script src=" {% static 'script/script.pato.js'%}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>
