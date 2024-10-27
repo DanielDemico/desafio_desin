@@ -11,7 +11,7 @@ def naves(request):
     naves_front = {
         'naves': Nave_Certa.objects.all()
     }
-    #Nave_Certa.objects.all().delete() Para deletar todos os registros
+    #Nave_Certa.objects.all().delete() #Para deletar todos os registros
     
     return render(request,'naves.html',naves_front)
 
@@ -72,53 +72,6 @@ def criarNave(request):
     return redirect(naves)
 
 def patos(request):
-    novo_pato = Pato()
 
-    novo_pato.pele_esverdeada = request.POST.get('pele_esverdeada')
-    novo_pato.bico_pequeno = request.POST.get('bico_pequeno')
-    novo_pato.sotaque_esquisito = request.POST.get('sotaque_esquisito')
-    novo_pato.local = request.POST.get('local')
-    novo_pato.quantidade = request.POST.get('quantidade')
-    if novo_pato.pele_esverdeada and novo_pato.bico_pequeno and novo_pato.sotaque_esquisito:
-        novo_pato.xenofago = True
-        if novo_pato.quantidade == "Sozinho":
-            if novo_pato.local in ["Lago", "Mar"]:
-                novo_pato.plano_captura = "Usar a Rede de Titânio para capturar o pato."
-            elif novo_pato.local in ["Floresta", "Parque"]:
-                novo_pato.plano_captura = "Usar a Gaiola de Aço com iscas para capturar o pato."
-            else:
-                novo_pato.plano_captura = "Usar o Drone de Captura para capturar o pato."
-
-        elif novo_pato.quantidade == "Em dupla":
-            if novo_pato.local in ["Lago", "Mar"]:
-                novo_pato.plano_captura = "Usar a Rede de Titânio em coordenação para cercar os patos."
-            elif novo_pato.local in ["Floresta", "Parque"]:
-                novo_pato.plano_captura = "Montar uma gaiola maior com iscas para capturar os patos."
-            else:
-                novo_pato.plano_captura = "Usar dois Drones de Captura para flanquear e capturar os patos."
-
-        elif novo_pato.quantidade == "Em bando pequeno":
-            if novo_pato.local in ["Lago", "Mar"]:
-                novo_pato.plano_captura = "Usar a Rede de Titânio para capturar o bando pequeno."
-            elif novo_pato.local in ["Floresta", "Parque"]:
-                novo_pato.plano_captura = "Montar várias gaiolas com iscas para capturar o bando pequeno."
-            else:
-                novo_pato.plano_captura = "Usar drones para atrair e capturar o bando pequeno."
-
-        else:
-            if novo_pato.local in ["Lago", "Mar"]:
-                novo_pato.plano_captura = "Usar uma grande Rede de Titânio para cercar o bando grande."
-            elif novo_pato.local in ["Floresta", "Parque"]:
-                novo_pato.plano_captura = "Montar armadilhas de gaiola interligadas para capturar o bando grande."
-            else:
-                novo_pato.plano_captura = "Usar uma frota de Drones de Captura para dispersar e capturar o bando grande."
-    else:
-        novo_pato.xenofago = False
-        novo_pato.plano_captura = "Não é um pato xenofago, deixe ele fazer quack quack." 
-
-    patos = {
-        'patos': Pato.objects.all()
-    }
-
-    return render(request,'patos.html', patos)
+    return render(request,'patos.html')
 
