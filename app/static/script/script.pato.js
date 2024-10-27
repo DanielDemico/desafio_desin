@@ -78,9 +78,9 @@ function exibirPato() {
 
     exibirTela();
     if (xenofago === true) {
-        document.getElementById("exibir-pato").innerHTML = captura;
+        document.getElementById("exibir-pato").innerHTML = `ALERTA<br>Este 'Pato' é um Xenófago!!!<br><br>Método Adequado de Captura: ${captura}`;
     }
     else {
-        document.getElementById("exibir-pato").innerHTML = "Este 'Pato' não é um Xenófago";
+        document.getElementById("exibir-pato").innerHTML = "Mantenha a Calma!<br><br>Este 'Pato' não é um Xenófago!";
     }
 }
