@@ -62,7 +62,7 @@ div.tela label {
     text-align: justify;
 }
 
-.exibir-pato {
+#exibir-pato {
     width: 95%;
     height: 95%;
     display: none;
