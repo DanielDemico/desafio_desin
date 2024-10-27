@@ -9,6 +9,15 @@ div#corpo {
     margin-bottom: 50px;
   }
 
+.header-line {
+    backdrop-filter: blur(10px);
+    width: 89%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid rgb(1, 236, 246);
+    border-radius: 20px;
+}  
+
 .linha-divisao {
     width: 100%;
     height: 100%;
@@ -41,10 +50,10 @@ div#corpo {
     border-radius: 20px;
     padding: 15px;
     margin: auto 50px auto 50px;
-    background-color: aliceblue;
 }
 
 .opcao {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -52,7 +61,7 @@ div#corpo {
 }
 
 
-div.tela label {
+label {
     font-size: large;
     color: rgba(1, 236, 246, 0.9);
     -webkit-text-stroke-color: rgba(218, 29, 129);
