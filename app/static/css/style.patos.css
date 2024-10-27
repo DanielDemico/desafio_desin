@@ -49,7 +49,6 @@ div#corpo {
     flex-direction: row;
     justify-content: center;
     margin: 8px auto 8px auto;
-    background-color: blueviolet;
 }
 
 
@@ -69,4 +68,10 @@ div.tela label {
     align-items: center;
     flex-direction: column;
     background-color: blueviolet;
+}
+
+select {
+    border: 1px solid rgb(1, 236, 246);
+    border-radius: 5px;
+    padding: 1px;
 }
