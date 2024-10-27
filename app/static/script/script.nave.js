@@ -69,27 +69,27 @@ function mudarAvaria(){
     const grau3 = document.getElementById('muito_destruida');
     const grau4 = document.getElementById('perda_total');
 
-    if (avaria === "intacta"){
+    if (avaria === "Intacta"){
         grau1.style.display="none";
         grau2.style.display="none";
         grau3.style.display="none";
         grau4.style.display="none";
-    } else if (avaria == "praticamente_intacta"){
+    } else if (avaria == "Praticamente intacta"){
         grau1.style.display="block";
         grau2.style.display="none";
         grau3.style.display="none";
         grau4.style.display="none";
-    } else if (avaria === "parcialmente_destruida"){
+    } else if (avaria === "Parcialmente destruída"){
         grau1.style.display="none";
         grau2.style.display="block";
         grau3.style.display="none";
         grau4.style.display="none";
-    } else if (avaria === "muito_destruida"){
+    } else if (avaria === "Muito destruída"){
         grau1.style.display="none";
         grau2.style.display="none";
         grau3.style.display="block";
         grau4.style.display="none";
-    } else if (avaria === "perda_total"){
+    } else if (avaria === "Perda total"){
         grau1.style.display="none";
         grau2.style.display="none";
         grau3.style.display="none";
@@ -101,13 +101,13 @@ function mudarTamanho(){
     const tamanho = document.querySelector('select[name="tamanho"]').value;
     const conjNave = document.querySelector('.container-img');
 
-    if (tamanho === "pequena"){
+    if (tamanho === "Pequena"){
         conjNave.style.scale = "100%"
-    } else if (tamanho === "media"){
+    } else if (tamanho === "Media"){
         conjNave.style.scale = "110%"
-    } else if (tamanho === "grande"){
+    } else if (tamanho === "Grande"){
         conjNave.style.scale = "125%"
-    } else if (tamanho === "gigantesca"){
+    } else if (tamanho === "Gigantesca"){
         conjNave.style.scale = "130%"
 
     }
@@ -147,13 +147,13 @@ function mudarCoresPopup(cor){
 
 function mudarTamanhoPopup(tamanho){
     
-    if (tamanho === "pequena"){
+    if (tamanho === "Pequena"){
         return "100%"
-    } else if (tamanho === "media"){
+    } else if (tamanho === "Media"){
         return "110%"
-    } else if (tamanho === "grande"){
+    } else if (tamanho === "Grande"){
         return "125%"
-    } else if (tamanho === "gigantesca"){
+    } else if (tamanho === "Gigantesca"){
         return "150%"
 
     }

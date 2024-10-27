@@ -10,7 +10,18 @@ div#corpo {
    
     
 }
+.header-text{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.header-text img{
+    height: 60px;
+    filter: invert(1);
 
+}
 .botao-submit {
     display: flex;
     align-items: center;

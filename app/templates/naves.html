@@ -17,7 +17,9 @@
             <div class="naves-registro">
             <div id="corpo-principal">
                 <header class="header-text">
+                    <a href="{% url 'home' %}"><img  src="{% static 'images/home.png'%}"></a> 
                     <h1>Catálogo de Naves</h1>
+                    <div style="display: hidden;"></div>
                 </header>
 
                 <div id="corpo">
@@ -30,10 +32,10 @@
                             <div class="opcoes">
                                 <label for="tamanho">Tamanho:</label>
                                 <select name="tamanho" onchange="mudarTamanho()">
-                                    <option value="pequena">Pequena</option>
-                                    <option value="media">Média</option>
-                                    <option value="grande">Grande</option>
-                                    <option value="gigantesca">Gigantesca</option>
+                                    <option value="Pequena">Pequena</option>
+                                    <option value="Media">Média</option>
+                                    <option value="Grande">Grande</option>
+                                    <option value="Gigantesca">Gigantesca</option>
                                 </select>
                             </div>
                             
@@ -74,25 +76,25 @@
                             <div class="opcoes">
                                 <label for="armamento">Armamentos:</label>
                                 <select name="armamento">
-                                    <option value="nenhum">Nenhum</option>
-                                    <option value="leve">Leve</option>
-                                    <option value="medio">Médio</option>
+                                    <option value="Nenhum">Nenhum</option>
+                                    <option value="Leve">Leve</option>
+                                    <option value="Médio">Médio</option>
                                     <option value="Pesado">Pesado</option>
-                                    <option value="nuclear">Nuclear</option>
+                                    <option value="Nuclear">Nuclear</option>
                                 </select>
                             </div>
 
                             <div class="opcoes">
                                 <label for="combustivel">Tipo de Combustível:</label>
                                 <select name="combustivel">
-                                    <option value="biocombustivel">Biocombustível</option>
+                                    <option value="Biocombustivel">Biocombustível</option>
                                     <option value="Antimatéria">Antimatéria</option>
-                                    <option value="plasma">Plasma</option>
-                                    <option value="energia_solar">Energia Solar</option>
-                                    <option value="hidrogenio">Hidrogênio</option>
-                                    <option value="eletrico">Elétrico</option>
-                                    <option value="oleo">Óleo</option>
-                                    <option value="gas">Gás</option>
+                                    <option value="Plasma">Plasma</option>
+                                    <option value="Energia solar">Energia Solar</option>
+                                    <option value="Hidrogênio">Hidrogênio</option>
+                                    <option value="Elétrico">Elétrico</option>
+                                    <option value="Óleo">Óleo</option>
+                                    <option value="Gás">Gás</option>
                                 </select>
                             </div>
 
@@ -104,23 +106,23 @@
                             <div class="opcoes">
                                 <label for="avaria">Grau de Avaria:</label>
                                 <select id="avariaSelect" name="avaria" onchange="mudarAvaria()">
-                                    <option value="intacta">Intacta</option>
-                                    <option value="praticamente_intacta">Praticamente Intacta</option>
-                                    <option value="parcialmente_destruida">Parcialmente Destruida</option>
-                                    <option value="muito_destruida">Muito Destruída</option>
-                                    <option value="perda_total">Perda Total</option>
+                                    <option value="Intacta">Intacta</option>
+                                    <option value="Praticamente intacta">Praticamente Intacta</option>
+                                    <option value="Parcialmente destruída">Parcialmente Destruida</option>
+                                    <option value="Muito destruída">Muito Destruída</option>
+                                    <option value="Perda total">Perda Total</option>
                                 </select>
                                 
                             </div>
 
                             <div class="opcoes">
                                 <label for="potencial_prospecção_tecnologico">Potencial Tecnológico (de 0 a 10):</label>
-                                <input name="potencial_prospecção_tecnologico" type="number" required>
+                                <input name="potencial_prospecção_tecnologico" type="number" min="0" max="10" required>
                             </div>
 
                             <div class="opcoes">
                                 <label for="periculosidade">Grau de Periculosidade (de 0 a 10):</label>
-                                <input name="periculosidade" type="number" required>
+                                <input name="periculosidade" type="number" min="0" max="10" required>
                             </div>
                             
                             <div class="botao-submit">
