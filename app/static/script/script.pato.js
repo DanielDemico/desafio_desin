@@ -67,12 +67,12 @@ function capturaPato(pele, bico, sotaque, local, quantidade, movimento) {
 }
 
 function exibirPato() {
-    const pele = document.querySelector(select[name="pele_esverdeada"]).value;
-    const bico = document.querySelector(select[name="bico_pequeno"]).value;
-    const sotaque = document.querySelector(select[name="sotaque_esquisito"]).value;
-    const local = document.querySelector(select[name="local"]).value;
-    const quantidade = document.querySelector(select[name="quantidade"]).value;
-    const movimento = document.querySelector(select[name="movimento"]).value;
+    const pele = document.querySelector('select[name="pele_esverdeada"]').value;
+    const bico = document.querySelector('select[name="bico_pequeno"]').value;
+    const sotaque = document.querySelector('select[name="sotaque_esquisito"]').value;
+    const local = document.querySelector('select[name="local"]').value;
+    const quantidade = document.querySelector('select[name="quantidade"]').value;
+    const movimento = document.querySelector('select[name="movimento"]').value;
 
     const captura = capturaPato(pele, bico, sotaque, local, quantidade, movimento)
 
