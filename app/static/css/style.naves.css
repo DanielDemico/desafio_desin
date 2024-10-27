@@ -130,9 +130,7 @@ aside.registro h2 {
     border-radius: 15px;
     margin-bottom: 20px;
 }
-.registro-nave{
-   
-}
+
 .registro-nave ul{
     list-style: none;
     margin: 0;
@@ -145,9 +143,6 @@ aside.registro h2 {
     background-color: azure;
     border-radius: 15px;
     margin-bottom: 20px;
-}
-.registro-nave ul li{
-
 }
 
 /* Daniels */
