@@ -11,7 +11,7 @@ def naves(request):
     naves_front = {
         'naves': Nave_Certa.objects.all()
     }
-
+   
     
     return render(request,'naves.html',naves_front)
 
@@ -68,6 +68,7 @@ def criarNave(request):
     naves_front = {
         'naves': Nave_Certa.objects.all()
     }
+    
     return redirect(naves)
 
 def patos(request):

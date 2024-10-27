@@ -120,6 +120,7 @@ aside.registro h2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
 }
 .registro{
     backdrop-filter: blur(10px);
@@ -139,10 +140,11 @@ aside.registro h2 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-  
+    
     width: 400px;
     background-color: azure;
     border-radius: 15px;
+    margin-bottom: 20px;
 }
 .registro-nave ul li{
 
@@ -232,28 +234,27 @@ img.fumaca2{
     top: 100px;
     height: 500px;
     width: 500px;
-    background-color: #1a1a1a; /* Cor de fundo escura */
+    background-color: #1a1a1a; 
     position: fixed;
     z-index: 100;
     display: none;
     align-items: center;
     flex-direction: column;
-    border-radius: 15px; /* Cantos mais arredondados */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Sombra mais intensa */
-    backdrop-filter: blur(10px); /* Desfoque do fundo */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transições suaves */
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px); 
+    transition: transform 0.3s ease, opacity 0.3s ease; 
 }
 
 .section-popup.show {
-    display: flex; /* Exibe o popup quando a classe "show" é adicionada */
-    transform: scale(1); /* Escala original */
-    opacity: 1; /* Opacidade total */
+    display: flex; 
+    transform: scale(1); 
+    opacity: 1; 
 }
 
 .section-popup.hide {
-    transform: scale(0.95); /* Leve redução de escala ao esconder */
-    opacity: 0; /* Opacidade zero */
-}
+    transform: scale(0.95); 
+    opacity: 0; 
 
 .DivImgPopup {
     position: relative;
@@ -262,39 +263,39 @@ img.fumaca2{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid #00bcd4; /* Borda com cor azul ciano */
-    border-radius: 10px; /* Cantos arredondados da borda */
-    overflow: hidden; /* Oculta parte da imagem que ultrapassa os limites */
-    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.6); /* Sombra azul ciano */
+    border: 5px solid #00bcd4; 
+    border-radius: 10px; 
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.6);
 }
 
 .img-popup {
     max-width: 100%;
     max-height: 100%;
-    object-fit: cover; /* Ajusta a imagem mantendo a proporção */
-    transition: transform 0.3s ease; /* Transição suave para zoom */
+    object-fit: cover; 
+    transition: transform 0.3s ease; 
 }
 
 .img-popup:hover {
-    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+    transform: scale(1.1); 
 }
 
 #etiquetasPopup {
     margin-top: 20px;
-    color: #00bcd4; /* Texto em azul ciano */
-    text-align: center; /* Centraliza o texto */
-    font-family: 'Arial', sans-serif; /* Fonte moderna */
+    color: #00bcd4; 
+    text-align: center; 
+    font-family: 'Arial', sans-serif; 
     padding-bottom: 40px;
 }
 
 .p-2 {
-    font-size: 28px; /* Tamanho maior para o botão de fechar */
-    color: #00bcd4; /* Cor azul ciano para o botão de fechar */
-    transition: color 0.3s ease; /* Transição suave para a cor */
+    font-size: 28px; 
+    color: #00bcd4;
+    transition: color 0.3s ease; 
 }
 
 .p-2:hover {
-    color: #ff4081; /* Cor rosa ao passar o mouse */
+    color: #ff4081; 
 }
 .popup-overlay{
     height: 100vh;
