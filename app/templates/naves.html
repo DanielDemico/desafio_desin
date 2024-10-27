@@ -172,9 +172,9 @@
                         <h2 style="color:white">Naves Registradas</h2>
                         <div class="naves">
                             {% for i in naves %}
-                                <div>
+                                <div class="registro-nave">
                                     <ul>
-                                        
+                                        <li>Nave {{i.id}}</li>
                                         <li>Tamanho: {{i.tamanho}}</li>
                                         <li>Cor: {{i.cor}}</li>                                       
                                         <li>Local da queda: {{i.queda}}</li>
@@ -185,19 +185,37 @@
                                         <li>Potencial de prospecção tecnológica: {{i.potencial_prospecção_tecnologico}}</li>
                                         <li>Periculosidade: {{i.periculosidade}}</li>
                                         <li id="etiqueta_naves" style="display: none;">Etiqueta: {{i.etiquetas}}</li>
+                                        <li><button onclick="aparecerPopup('{{i.tamanho}}','{{i.cor}}','{{i.etiquetas}}')">Inspecionar</button></li>
                                     </ul>
 
-                                    <div class="d-flex justify-content-center">
-                                        <button onclick="aparecerEtiquetas()">Inspecionar</button>
-                                    </div>
+                                    
+                                        
+                                
                                 </div>
                               
                             {% endfor %}
                         </div>
                     </section>
-                  
+                
                 </div>
+                
+              
             </div>
+            <div id="popOverlay" class="popup-overlay" onclick="fecharPopup()" style="display: none;"></div> 
+            <section id="pupUp" class="section-popup" >
+                <div class="d-flex w-100 justify-content-end">
+                    <span class="p-2" onclick="fecharPopup()" style="cursor: pointer;">X</span>
+                </div>
+                <div id="DivImgPopup" class="DivImgPopup">
+                    <img id="imgPopup" class="img-popup" src="{% static 'images/naves/naveBranca.png' %}" >
+
+          
+
+                </div>
+                <div id="etiquetasPopup">
+                    
+                </div>
+            </section>
         </section>
         <script src=" {% static 'script/script.nave.js'%}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -2,18 +2,34 @@ let etiqueta_value = true;
 
 document.getElementById('avariaSelect').addEventListener('change', mudarAvaria);
 
-function aparecerEtiquetas(){
-    const etiqueta = document.getElementById('etiqueta_naves');
-    if (etiqueta_value === true){
-        etiqueta.style.display = "block";
-        etiqueta_value = false;
+const telaPopup = document.getElementById("pupUp");
+const imgPopup = document.getElementById("imgPopup");
+const divImgPopup = document.getElementById("DivImgPopup");
+const popOverlay = document.getElementById("popOverlay");
+
+function aparecerPopup(tamanho,cor,etiquetas){
+
+    popOverlay.style.display="block";
+    telaPopup.style.display = "flex";
+
+    let escala = mudarTamanhoPopup(tamanho);
+    imgPopup.style.scale = tamanho;
+
+    let caminho = mudarCoresPopup(cor);
+    imgPopup.src = caminho;
+
+
     
-    } else{
-        etiqueta.style.display = "none";
-        etiqueta_value = true;
-    };
+
+
+    const divEtiquetas = document.getElementById("etiquetasPopup");
+    divEtiquetas.innerHTML = `Avaliação da Nave: ${etiquetas}`
 };
 
+function fecharPopup(){
+    popOverlay.style.display="none";
+    telaPopup.style.display="none";
+}
 function mudarCores(){
     const img_nave = document.getElementById("nave");
     const cores = document.querySelector('select[name="cor"]').value;
@@ -44,7 +60,7 @@ function mudarCores(){
     } else if ( cores == "dourado"){
         nave.src = "/static/images/naves/ovoDourado.png";
     } 
-}
+};
 
 function mudarAvaria(){
     const avaria = document.querySelector('select[name="avaria"]').value;
@@ -92,7 +108,53 @@ function mudarTamanho(){
     } else if (tamanho === "grande"){
         conjNave.style.scale = "125%"
     } else if (tamanho === "gigantesca"){
-        conjNave.style.scale = "150%"
+        conjNave.style.scale = "130%"
 
     }
-}
+};
+
+
+// Partes para o Popup
+function mudarCoresPopup(cor){   
+    if (cor == "preto"){
+        return "/static/images/naves/navepreto.png";
+    } else if( cor == "branco"){
+        return "/static/images/naves/naveBranca.png";
+    } else if ( cor == "azul"){
+        return "/static/images/naves/naveAzul.png";
+    } else if ( cor == "verde"){
+        return "/static/images/naves/naveVerde.png";
+    } else if ( cor == "vermelho"){
+        return "/static/images/naves/naveVermelha.png";
+    } else if ( cor == "amarelo"){
+        return "/static/images/naves/naveamarela.png";
+    } else if ( cor == "laranja"){
+        return "/static/images/naves/naveLaranja.png";
+    } else if ( cor == "roxo"){
+        return "/static/images/naves/naveRoxa.png";
+    } else if ( cor == "rosa"){
+        return "/static/images/naves/naveRosa.png";
+    } else if ( cor == "marrom"){
+        return "/static/images/naves/naveMarrom.png";
+    } else if ( cor == "cinza"){
+        return "/static/images/naves/naveCinza.png";
+    } else if ( cor == "prata"){
+        return "/static/images/naves/navePrata.png";
+    } else if ( cor == "dourado"){
+        return "/static/images/naves/ovoDourado.png";
+    } 
+};
+
+function mudarTamanhoPopup(tamanho){
+    
+    if (tamanho === "pequena"){
+        return "100%"
+    } else if (tamanho === "media"){
+        return "110%"
+    } else if (tamanho === "grande"){
+        return "125%"
+    } else if (tamanho === "gigantesca"){
+        return "150%"
+
+    }
+};
