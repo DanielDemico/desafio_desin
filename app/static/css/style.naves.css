@@ -255,7 +255,7 @@ img.fumaca2{
 .section-popup.hide {
     transform: scale(0.95); 
     opacity: 0; 
-
+}
 .DivImgPopup {
     position: relative;
     height: 80%;
