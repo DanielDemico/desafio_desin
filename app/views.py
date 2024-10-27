@@ -31,7 +31,8 @@ def criarNave(request):
     
     lista_etiquetas = []
 
-
+    nova_nave.potencial_prospecção_tecnologico = int(nova_nave.potencial_prospecção_tecnologico)
+    nova_nave.periculosidade = int(nova_nave.periculosidade)
     if "nenhum" in nova_nave.tripulantes.lower():
         lista_etiquetas.append("Nave de Fugitivos")
 

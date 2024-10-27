@@ -7,6 +7,8 @@ div#corpo {
     height: 700px;
     margin-top: 30px;
     margin-bottom: 50px;
+   
+    
 }
 
 .botao-submit {
@@ -19,7 +21,7 @@ div#corpo {
 
 section.catalogar {
     backdrop-filter: blur(10px);
-    width: 55%;
+    width: 50%;
     height: 100%;
     padding: 8px;
     float: left;
@@ -114,10 +116,36 @@ aside.registro h2 {
     list-style: none;
 
 }
+.naves{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .registro{
     backdrop-filter: blur(10px);
     padding: 20px;
     width: 100%;
+    border: 1px solid rgb(1, 236, 246);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.registro-nave{
+   
+}
+.registro-nave ul{
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  
+    width: 400px;
+    background-color: azure;
+    border-radius: 15px;
+}
+.registro-nave ul li{
+
 }
 
 /* Daniels */
@@ -125,6 +153,7 @@ section.inspecionar-popup{
     background-color: aqua;
 }
 section.imagem-nave{
+   margin-right: 40px;
     width: 400px;
     height: 600px;
     position: relative;
@@ -135,6 +164,16 @@ section.imagem-nave{
 
 div.container-img{
     position: absolute;
+    animation: sobre-desce 2s infinite ease-in-out ;
+
+}
+@keyframes sobre-desce {
+    0%,100%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-50px);
+    }
 
 }
 img.img-nave{
@@ -184,4 +223,82 @@ img.fumaca2{
     left: 140px;
     z-index: -1;
     transform: scaleX(-1);
+}
+
+
+/* popup */
+.section-popup {
+    align-self: center;
+    top: 100px;
+    height: 500px;
+    width: 500px;
+    background-color: #1a1a1a; /* Cor de fundo escura */
+    position: fixed;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px; /* Cantos mais arredondados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Sombra mais intensa */
+    backdrop-filter: blur(10px); /* Desfoque do fundo */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transições suaves */
+}
+
+.section-popup.show {
+    display: flex; /* Exibe o popup quando a classe "show" é adicionada */
+    transform: scale(1); /* Escala original */
+    opacity: 1; /* Opacidade total */
+}
+
+.section-popup.hide {
+    transform: scale(0.95); /* Leve redução de escala ao esconder */
+    opacity: 0; /* Opacidade zero */
+}
+
+.DivImgPopup {
+    position: relative;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #00bcd4; /* Borda com cor azul ciano */
+    border-radius: 10px; /* Cantos arredondados da borda */
+    overflow: hidden; /* Oculta parte da imagem que ultrapassa os limites */
+    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.6); /* Sombra azul ciano */
+}
+
+.img-popup {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Ajusta a imagem mantendo a proporção */
+    transition: transform 0.3s ease; /* Transição suave para zoom */
+}
+
+.img-popup:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+#etiquetasPopup {
+    margin-top: 20px;
+    color: #00bcd4; /* Texto em azul ciano */
+    text-align: center; /* Centraliza o texto */
+    font-family: 'Arial', sans-serif; /* Fonte moderna */
+    padding-bottom: 40px;
+}
+
+.p-2 {
+    font-size: 28px; /* Tamanho maior para o botão de fechar */
+    color: #00bcd4; /* Cor azul ciano para o botão de fechar */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+}
+
+.p-2:hover {
+    color: #ff4081; /* Cor rosa ao passar o mouse */
+}
+.popup-overlay{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    margin-left: -90px;
 }
